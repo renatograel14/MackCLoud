@@ -8,12 +8,47 @@
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "authenticationView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "authenticationViewModel",
+          "dataProvider": "mobilePrivateCloudMackenzie",
+          "emailLabel": "TIA",
+          "passwordLabel": "Password",
+          "signinLabel": "entrar",
+          "signinRedirect": "home",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Registrar-se",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "Name",
+          "registerLabel": "Enviar",
+          "registerRedirect": "home",
+          "gotoSigninLabel": "Sign In"
+        }
+      ],
+      "title": "Authentication",
+      "addToNavigation": false
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "mobilePrivateCloudMackenzie",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "Mobile Private Cloud Mackenzie / Mobile Private Cloud Mackenzie",
+      "source": "everlive",
+      "everliveKey": "w7lty3sjux7tvlbh",
+      "offlineStorage": true
+    }
+  ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
-  "view": "home",
+  "view": "authenticationView",
   "transition": "slide",
   "skin": "flat"
 }
