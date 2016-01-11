@@ -45,12 +45,11 @@ app.authenticationView = kendo.observable({
         },
         authenticationViewModel = kendo.observable({
             displayName: '',
-            tia: '',
             email: '',
             password: '',
             validateData: function(data) {
-                if (!data.tia) {
-                    alert('Missing TIA');
+                if (!data.email) {
+                    alert('Missing email');
                     return false;
                 }
 
@@ -63,18 +62,16 @@ app.authenticationView = kendo.observable({
             },
             signin: function() {
                 var model = authenticationViewModel,
-                    TIA = model.tia,
                     email = model.email.toLowerCase(),
                     password = model.password;
 
                 if (!model.validateData(model)) {
                     return false;
                 }
-                provider.Users.login(TIA, password, successHandler, init);
+                provider.Users.login(email, password, successHandler, init);
             },
             register: function() {
                 var model = authenticationViewModel,
-                    TIA = model.tia,
                     email = model.email.toLowerCase(),
                     password = model.password,
                     displayName = model.displayName,
@@ -87,10 +84,10 @@ app.authenticationView = kendo.observable({
                     return false;
                 }
 
-                provider.Users.register(TIA, password, attrs, successHandler, init);
+                provider.Users.register(email, password, attrs, successHandler, init);
             },
             toggleView: function() {
-                mode = mode === 'register' 
+                mode = mode === 'signin' ? 'register' : 'signin';
                 init();
             }
         });
@@ -101,9 +98,7 @@ app.authenticationView = kendo.observable({
     });
 })(app.authenticationView);
 
-
 // START_CUSTOM_CODE_authenticationViewModel
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
 
 // END_CUSTOM_CODE_authenticationViewModel

@@ -48,7 +48,7 @@
   ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
-  "view": "authenticationView",
+  "view": "home",
   "transition": "slide",
   "skin": "flat"
 }
