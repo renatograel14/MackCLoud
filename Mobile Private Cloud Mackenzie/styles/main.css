@@ -34,7 +34,7 @@
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
     color: #fff;
-    background-color: #10c4b2;
+    background-color: rgba(255, 0, 0, 0.792157);
 }
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
@@ -148,16 +148,14 @@
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
 
-.km-flat .km-view .km-navbar {
-    background-color: rgba(255, 0, 0, );
+.km-flat .km-view .km-navbar  {
+    background-color: rgba(255, 0, 0,);
     color: rgb(255, 255, 255);
 }
-
-.km-flat .km-button {
+.km-flat .km-button{
     background-color: rgb(255, 0, 0);
     color: rgb(255, 255, 255);
 }
-
 .km-flat .km-view .km-navbar {
     background-color: rgb(255, 0, 0);
 }
